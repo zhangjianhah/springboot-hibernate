@@ -1,0 +1,4 @@
+#${DEPLOY_ENV}动态环境配置，启动时需在Ide工具中设置dev/test/prod
+spring:
+  profiles:
+    active: dev
