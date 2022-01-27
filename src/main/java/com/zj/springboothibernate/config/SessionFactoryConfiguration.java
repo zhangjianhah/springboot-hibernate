@@ -72,6 +72,16 @@ public class SessionFactoryConfiguration {
         properties.setProperty("hibernate.show_sql", String.valueOf( hibernateProperties.isShowSql()));
         properties.setProperty("hibernate.hbm2ddl.auto", hibernateProperties.getDdlAuto());
         properties.setProperty("hibernate.dialect", hibernateProperties.getDialect());
+
+
+
+        //批量插入时的数量(flush()时，有多条数据的数量)
+        properties.setProperty("hibernate.jdbc.batch_size", String.valueOf(hibernateProperties.getJdbcBatchSize()));
+
+
+
+
+
         //事务
         properties.setProperty("hibernate.current_session_context_class", hibernateProperties.getCurrentSessionContextClass());
 

@@ -2,9 +2,7 @@ package com.zj.springboothibernate.service;
 
 
 import com.zj.springboothibernate.dao.UserDao;
-import com.zj.springboothibernate.entity.PcUser;
-import com.zj.springboothibernate.entity.Student;
-import com.zj.springboothibernate.entity.User;
+import com.zj.springboothibernate.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.orm.hibernate5.SpringSessionContext;
 
@@ -107,4 +106,42 @@ public class UserService {
 //    public List<User> listUser()  {
 ////        userDao.getSession().
 //    }
+
+
+
+    public void school(){
+//        School school = new School();
+//        userDao.getSession().save(school);
+
+//        IDCard idCard = new IDCard();
+//        idCard.setNumber(UUID.randomUUID().toString().replaceAll("-",""));
+//        Student student = new Student();
+//        student.setIdCard(idCard);
+//        userDao.getSession().save(student);
+
+
+
+        IDCard idCard = userDao.getEntity(IDCard.class,3);
+        idCard.getStudent().getName();
+//
+//
+//        System.out.println(idCard.getId());
+//        System.out.println(idCard.getStudent().getId());
+//
+//
+        idCard.setNumber("11127");
+        idCard.getStudent().setName("zj");
+        userDao.getSession().saveOrUpdate(idCard);
+
+
+
+//        Student student = userDao.getEntity(Student.class,3);
+//        System.out.println(student.getIdCard().getNumber());
+//        student.setName("112");
+//        student.getIdCard().setNumber("998");
+//        userDao.getSession().saveOrUpdate(student);
+
+
+
+    }
 }

@@ -35,3 +35,4 @@ zj:
     show-sql: true
     packages-to-scan: com.zj
     current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+    jdbc_batch_size: 20

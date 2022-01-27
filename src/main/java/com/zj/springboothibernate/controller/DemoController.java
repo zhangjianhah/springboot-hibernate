@@ -33,5 +33,13 @@ public class DemoController {
     }
 
 
+    @GetMapping("/school")
+    public void school(){
+//        userService.insertUser();
+        userService.school();
+    }
+
+
+
 
 }

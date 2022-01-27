@@ -14,6 +14,7 @@ public class HibernateProperties {
     private boolean showSql;
     private String packagesToScan;
     private String currentSessionContextClass;
+    private Integer jdbcBatchSize;
 
 
 
